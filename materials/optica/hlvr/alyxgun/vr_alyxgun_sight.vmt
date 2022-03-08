@@ -1,0 +1,14 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "optica/HLVR/alyxgun/alyxgun_sight_g"
+	
+	$translucent 1
+	
+	$emissiveBlendEnabled 1
+	$emissiveBlendTexture	"dev/null"
+	$emissiveBlendBaseTexture	"optica/HLVR/alyxgun/alyxgun_sight_g"
+	$emissiveBlendFlowTexture	"dev/null"
+//	$emissiveBlendTint "[2.52 0.64 0.036]"
+	$emissiveBlendStrength 1
+	$emissiveBlendScrollVector "[0 0]"
+}

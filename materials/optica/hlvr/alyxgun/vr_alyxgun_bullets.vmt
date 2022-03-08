@@ -1,0 +1,23 @@
+"VertexlitGeneric"
+{
+	"$basetexture" 	"optica/HLVR/alyxgun/AlyxGun_bullets"
+	"$bumpmap" 		"optica/HLVR/alyxgun/AlyxGun_bullets_n"
+     
+	"$phongexponenttexture" "optica/HLVR/alyxgun/AlyxGun_bullets_n"
+	"$phong" "1"
+	"$phongboost"	"50"
+	
+	"$envmap" "env_cubemap"
+	"$envmaptint"	"[0.03 0.03 0.03]"
+	"$envmapfresnel"	"1"
+
+	"$phongfresnelranges"	"[0.22 0.856 20]"
+
+	$emissiveBlendEnabled 1
+	$emissiveBlendTexture	"dev/null"
+	$emissiveBlendBaseTexture	"optica/HLVR/alyxgun/AlyxGun_bullets_emissive"
+	$emissiveBlendFlowTexture	"dev/null"
+//	$emissiveBlendTint "[2.52 0.64 0.036]"
+	$emissiveBlendStrength 1
+	$emissiveBlendScrollVector "[0 0]"
+}

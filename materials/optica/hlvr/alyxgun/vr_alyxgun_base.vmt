@@ -1,0 +1,15 @@
+"VertexlitGeneric"
+{
+	"$basetexture" 	"optica/HLVR/alyxgun/AlyxGun_Base"
+	"$bumpmap" 		"optica/HLVR/alyxgun/AlyxGun_Base_n"
+	
+	"$envmap" "env_cubemap"
+	"$envmaptint"	"[0.03 0.03 0.03]"
+	"$envmapfresnel"	"1"
+     
+	"$phongexponenttexture" "optica/HLVR/alyxgun/AlyxGun_Base_n"
+	"$phong" "1"
+	"$phongboost"	"6"
+
+	"$phongfresnelranges"	"[0.22 0.856 20]"
+}
