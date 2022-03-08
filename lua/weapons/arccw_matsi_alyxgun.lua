@@ -209,7 +209,9 @@ SWEP.BulletBones = {
 }
 
 SWEP.AttachmentElements = {
-
+    ["matsi_alyxgun_reservoir"] = {
+        VMBodygroups = {{ind = 8, bg = 1}}
+    }
 }
 
 SWEP.Hook_NameChange = function(wep,name)
@@ -220,8 +222,9 @@ SWEP.Hook_ModifyBodygroups = function(wep,data)
     local vm = data.vm
     local atts = wep.Attachments
 
-    if atts[2].Installed then
+    if atts[5].Installed and wep:Clip1() > 1 then
         -- Todo: Bullet reservoir
+        vm:SetBodygroup(9,math.Clamp(11 - wep:Clip1(),0,9))
     else
         vm:SetBodygroup(9,10)
     end
@@ -385,8 +388,15 @@ SWEP.Attachments = {
             vpos = Vector(0, -1.3, 5),
             vang = Angle(90, 0, -90),
         },
-        MergeSlots = {7},
-        ExcludeFlags = {"ud_glock_slide_subcompact"}
+    },
+    {
+        PrintName = "Magazine",
+        Slot = {"matsi_alyxgun_mag"},
+        Bone = "glock_parent",
+        Offset = {
+            vpos = Vector(0, -1.3, 5),
+            vang = Angle(90, 0, -90),
+        },
     },
     {
         PrintName = "Charm",
@@ -398,8 +408,5 @@ SWEP.Attachments = {
             vang = Angle(90, 0, -90),
         },
         VMScale = Vector(0.7, 0.7, 0.7),
-    },
-    {
-        Hidden = true,
     },
 }
