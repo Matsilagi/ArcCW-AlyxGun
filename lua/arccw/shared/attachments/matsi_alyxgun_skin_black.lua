@@ -5,7 +5,7 @@ att.Slot = "matsi_alyxgun_skin"
 att.Desc_Neutrals = {
     "Cosmetical only. Offered for those who pre-ordered Half-Life Alyx."
 }
-att.SortOrder = 1
+att.SortOrder = 3
 
 att.IgnorePickX = true
 att.ActivateElements = {"masti_alyxgun_skin_black"}
