@@ -399,7 +399,7 @@ SWEP.Attachments = {
 		RequireFlags = {"front_shroud"},
 		Bone = "tag_weapon",
         Offset = {
-			vpos = Vector(0, 5.715, 0.72),
+			vpos = Vector(0, 5.715, -0.35),
 			vang = Angle(0,-180,0)
 		},
     },

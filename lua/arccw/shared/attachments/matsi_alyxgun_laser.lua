@@ -9,5 +9,5 @@ att.ColorOptionsTable = {Color(255, 64, 0, 150)}
 
 att.Model = "models/weapons/hlvr/c_alyxgun_laserdummy.mdl"
 att.Laser = true
-att.LaserStrength = 0.35
+att.LaserStrength = 0.85
 att.LaserBone = "laser"
