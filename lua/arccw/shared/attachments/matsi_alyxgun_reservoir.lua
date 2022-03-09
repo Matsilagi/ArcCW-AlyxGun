@@ -7,3 +7,38 @@ This requires the operator to reload twice to reach maximum capacity.]]
 att.Slot = "matsi_alyxgun_mag"
 
 att.Override_ChamberSize = 11
+
+local path = ")^weapons/arccw_alyx/pistol/"
+
+att.Hook_Think = function(wep)
+    if CLIENT then
+        if wep.Reservoir == nil or wep:Clip1() < wep.Reservoir then
+            wep.Reservoir = math.Clamp(wep:Clip1() - 1,0,10)
+        elseif wep.Reservoir and math.Clamp(wep:Clip1() - 1,0,10) > wep.Reservoir then
+            local ticks = 10 - wep.Reservoir
+            for i = 1, ticks do
+                timer.Simple(.075 * i,function()
+                    if i == ticks then
+                        wep:EmitSound(path .. "reload_hop_end.ogg")
+                    else
+                        wep:EmitSound(path .. "reload_hop_0"..math.random(1,5)..".ogg")
+                    end
+                end)
+            end
+
+            wep.Reservoir = nil
+        end
+    end -- I'll eventually make it so the bodygroups update in sync
+end
+
+att.Hook_ModifyBodygroups = function(wep,data)
+    if CLIENT then
+        local vm = data.vm
+
+        if wep:Clip1() > 1 then
+            vm:SetBodygroup(9,math.Clamp(11 - wep:Clip1(),0,9))
+        else
+            vm:SetBodygroup(9,10)
+        end
+    end
+end

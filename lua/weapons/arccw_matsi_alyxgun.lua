@@ -193,10 +193,10 @@ SWEP.WorldModelOffset = {
 -- Firing sounds --
 
 -- UC firing soudns are temporary
-local path = ")^weapons/arccw_ud/glock/"
+local path = ")^weapons/arccw_alyx/pistol/"
 local path1 = ")^weapons/arccw_ud/uzi/"
 local common = ")^/arccw_uc/common/"
-SWEP.ShootSound = {path .. "fire-01.ogg", path .. "fire-02.ogg", path .. "fire-03.ogg", path .. "fire-04.ogg", path .. "fire-05.ogg", path .. "fire-06.ogg"} -- Maybe Not Placeholder
+SWEP.ShootSound = {path .. "fire_01.ogg",path .. "fire_02.ogg",path .. "fire_03.ogg",path .. "fire_04.ogg"}
 SWEP.ShootSoundSilenced = path .. "fire_supp.ogg"
 SWEP.DistantShootSound = {path .. "fire-dist-01.ogg", path .. "fire-dist-02.ogg", path .. "fire-dist-03.ogg", path .. "fire-dist-04.ogg", path .. "fire-dist-05.ogg", path .. "fire-dist-06.ogg"} -- Maybe Not Placeholder
 SWEP.DistantShootSoundSilenced = common .. "sup_tail.ogg"
@@ -222,12 +222,7 @@ SWEP.Hook_ModifyBodygroups = function(wep,data)
     local vm = data.vm
     local atts = wep.Attachments
 
-    if atts[5].Installed and wep:Clip1() > 1 then
-        -- Todo: Bullet reservoir
-        vm:SetBodygroup(9,math.Clamp(11 - wep:Clip1(),0,9))
-    else
-        vm:SetBodygroup(9,10)
-    end
+    vm:SetBodygroup(9,10)
 end
 
 -- Animations --
