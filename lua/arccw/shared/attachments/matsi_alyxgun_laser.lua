@@ -7,6 +7,7 @@ att.Desc_Pros = {
 att.Slot = {"matsi_alyxgun_tactical"}
 att.ColorOptionsTable = {Color(255, 64, 0, 150)}
 
+att.Model = "models/weapons/hlvr/c_alyxgun_laserdummy.mdl"
 att.Laser = true
-att.LaserStrength = 3
-att.LaserBone = "3"
+att.LaserStrength = 0.35
+att.LaserBone = "laser"

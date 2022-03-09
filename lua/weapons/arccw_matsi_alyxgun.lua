@@ -200,15 +200,17 @@ SWEP.BulletBones = {
 SWEP.AttachmentElements = {
     ["matsi_alyxgun_reservoir"] = {
         VMBodygroups = {
-			{ind = 8, bg = 1},
-			{ind = 4, bg = 1}
+			{ind = 8, bg = 1}
 		}
     },
 	["matsi_alyxgun_frontshroud"] = {
 		VMBodygroups = {{ind = 5, bg = 1}},
 	},
     ["matsi_alyxgun_burst"] = {
-        VMBodygroups = {{ind = 2, bg = 1}},
+        VMBodygroups = {
+			{ind = 2, bg = 1},
+			{ind = 4, bg = 1}
+		},
         Override_IronSightStruct = {
             Pos = Vector(-2.3, 4.3, 1.52),
             Ang = Angle(0.2, 0.05, 5.1),
@@ -386,6 +388,11 @@ SWEP.Attachments = {
         PrintName = "Tactical",
         Slot = {"matsi_alyxgun_tactical"},
 		RequireFlags = {"front_shroud"},
+		Bone = "tag_weapon",
+        Offset = {
+			vpos = Vector(0, 5.715, 0.72),
+			vang = Angle(0,-180,0)
+		},
     },
     {
         PrintName = "Magazine",
