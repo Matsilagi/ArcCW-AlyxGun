@@ -3,7 +3,7 @@ att.AbbrevName = "Wooden Grip"
 att.Description = "A wood-looking grip´for the pistol. Looks fancy!"
 att.Slot = "matsi_alyxgun_skin"
 att.Desc_Neutrals = {
-    "Cosmetical only. Offered for those who pre-ordered Half-Life Alyx."
+    "Cosmetical only. A mix for those who like their stuff personal."
 }
 att.SortOrder = 1
 
