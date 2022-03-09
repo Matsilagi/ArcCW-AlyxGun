@@ -272,18 +272,9 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw",
-        SoundTable = {
-            {s = path .. "draw.ogg", t = 0}, -- Not Temporary
-            {s = common .. "raise.ogg", t = 0.05},
-        },
     },
     ["draw_empty"] = {
         Source = "draw_empty",
-        Time = 12 / 30,
-        SoundTable = {
-            {s = path .. "draw.ogg", t = 0}, -- Not Temporary
-            {s = common .. "raise.ogg", t = 0.05},
-        },
     },
     -- ["holster"] = {
     --     Source = "holster",
@@ -314,21 +305,17 @@ SWEP.Animations = {
         Source = "fire",
         Time = 16 / 30,
         ShellEjectAt = 0.03,
-        SoundTable = {{ s = {path .. "mech-01.ogg", path .. "mech-02.ogg", path .. "mech-03.ogg", path .. "mech-04.ogg", path .. "mech-05.ogg", path .. "mech-06.ogg"}, t = 0.03 }},
     },
     ["fire_empty"] = {
         Source = "fire_empty",
         Time = 16 / 30,
         ShellEjectAt = 0.03,
-        SoundTable = {{ s = {path .. "mech-01.ogg", path .. "mech-02.ogg", path .. "mech-03.ogg", path .. "mech-04.ogg", path .. "mech-05.ogg", path .. "mech-06.ogg"}, t = 0.03 }},
+        SoundTable = {{s = path .. "slidelock.ogg", t = 1/30, c = ci},},
     },
-
-    -- 17 Round Reloads --
-
     ["reload"] = {
         Source = "reload",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_PISTOL,
-        Time = 56 / 30,
+        Time = 73 / 30,
         MinProgress = 1.1,
         LastClip1OutTime = 0.9,
         LHIK = true,
@@ -337,18 +324,15 @@ SWEP.Animations = {
         LHIKEaseOut = 0.15,
         LHIKOut = 0.3,
         SoundTable = {
-            {s = rottle, t = 0},
-            {s = rattel, t = 0.3},
-            {s = path .. "magout_partial.ogg",        t = 0.3, c = ci},
-            {s = rattel, t = 0.35},
-            {s = path .. "magin_new.ogg",         t = 0.5, c = ci},
-            {s = rottle, t = 0.5},
+            {s = path .. "magout.ogg", t = 20/30, c = ci},
+            {s = path .. "magin.ogg", t = 37/30, c = ci},
+			{s = path .. "slideclose.ogg", t = 42/30, c = ci}
         },
     },
     ["reload_empty"] = {
         Source = "reload_empty",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_PISTOL,
-        Time = 65 / 30,
+        Time = 73 / 30,
         MinProgress = 1.5,
         LastClip1OutTime = 0.7,
         LHIK = true,
@@ -357,14 +341,9 @@ SWEP.Animations = {
         LHIKEaseOut = 0.15,
         LHIKOut = 0.3,
         SoundTable = {
-            {s = rattel, t = 0},
-            {s = path .. "magrelease.ogg",    t = 0.15, c = ci},
-            {s = path .. "magout_empty.ogg",        t = 0.15, c = ci},
-            {s = path .. "magin_new.ogg",         t = 0.55, c = ci},
-            {s = rattel, t = 0.5},
-            {s = common .. "pistol_magdrop.ogg",  t = 0.65},
-            {s = rottle, t = 1.15},
-            {s = path .. "chamber.ogg",      t = 1.45, c = ci},
+            {s = path .. "magout.ogg",    t = 14/30, c = ci},
+            {s = path .. "magin.ogg",         t = 45/30, c = ci},
+            {s = path .. "slideclose.ogg",      t = 55/30, c = ci},
         },
     },
 }
