@@ -35,7 +35,7 @@ SWEP.Trivia_Desc = [[Standard .45 ACP pistol given to Alyx by a different scient
 SWEP.Trivia_Manufacturer = "Le Clarion"
 SWEP.Trivia_Calibre = ".45 ACP"
 SWEP.Trivia_Mechanism = "Short Recoil"
-SWEP.Trivia_Country = "USA"
+SWEP.Trivia_Country = "France"
 SWEP.Trivia_Year = "20XX"
 
 -- Weapon slot --
@@ -47,6 +47,7 @@ SWEP.Slot = 1
 if GetConVar("arccw_truenames"):GetBool() then
     SWEP.PrintName = SWEP.TrueName
     SWEP.Trivia_Manufacturer = "Para USA"
+	SWEP.Trivia_Country = "USA"
 end
 
 -- Viewmodel / Worldmodel / FOV --
@@ -153,8 +154,8 @@ SWEP.HoldtypeActive = "pistol"
 SWEP.HoldtypeSights = "revolver"
 
 SWEP.IronSightStruct = { -- Needs to be adjusted, aiming too far left
-     Pos = Vector(-2.3, 4.3, 1.52),
-     Ang = Angle(0.2, 0.05, 5.1),
+     Pos = Vector(-2.31, 3.769, 1.478),
+     Ang = Angle(0.421, -0.007, 5.206),
      Magnification = 1,
      ViewModelFOV = 55,
     --  SwitchToSound = ratel, -- sound that plays when switching to this sight
@@ -167,8 +168,8 @@ SWEP.ActiveAng = Angle(0, 0, -5)
 SWEP.CustomizePos = Vector(7, -2, -2)
 SWEP.CustomizeAng = Angle(15, 25, 0)
 
-SWEP.CrouchPos = Vector(-2, -6, 1)
-SWEP.CrouchAng = Angle(0, 0, -20)
+SWEP.CrouchPos = Vector(-2, 0, 0)
+SWEP.CrouchAng = Angle(0, 0, -8)
 
 SWEP.BarrelOffsetHip = Vector(3.5, 0, -3)
 
@@ -212,8 +213,8 @@ SWEP.AttachmentElements = {
 			{ind = 4, bg = 1}
 		},
         Override_IronSightStruct = {
-            Pos = Vector(-2.3, 4.3, 1.52),
-            Ang = Angle(0.2, 0.05, 5.1),
+            Pos = Vector(-2.31, 3.769, 1.478),
+            Ang = Angle(0.421, -0.007, 5.206),
         }
     },
 	["matsi_alyxgun_laser"] = {
@@ -297,6 +298,13 @@ SWEP.Animations = {
     ["idle_inspect"] = {
         Source = "idle_inspect",
         Time = 1/32,
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKOut = 0,
+    },
+	["idle_inspect_empty"] = {
+        Source = "idle_inspect_empty",
+        time = 72 / 60,
         LHIK = true,
         LHIKIn = 0,
         LHIKOut = 0,
