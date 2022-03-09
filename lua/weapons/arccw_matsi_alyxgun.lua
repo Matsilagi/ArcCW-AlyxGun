@@ -222,6 +222,11 @@ SWEP.AttachmentElements = {
 			{ind = 6, bg = 1}
 		}
 	},
+	["matsi_alyxgun_iron"] = {
+		VMBodygroups = {
+			{ind = 7, bg = 1}
+		},
+	},
 }
 
 SWEP.Hook_NameChange = function(wep,name)
@@ -371,7 +376,11 @@ SWEP.Attachments = {
         PrintName = "Optic",
         DefaultAttName = "Iron Sights",
         Slot = {"matsi_alyxgun_iron"},
+		Bone = "tag_weapon",
 		RequireFlags = {"front_shroud"},
+		Offset = {
+			vang = Angle(0,-90,0)
+		},
     },
     {
         PrintName = "Slide",
