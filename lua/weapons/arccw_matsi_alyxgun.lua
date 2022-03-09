@@ -199,7 +199,10 @@ SWEP.BulletBones = {
 
 SWEP.AttachmentElements = {
     ["matsi_alyxgun_reservoir"] = {
-        VMBodygroups = {{ind = 8, bg = 1}}
+        VMBodygroups = {
+			{ind = 8, bg = 1},
+			{ind = 4, bg = 1}
+		}
     },
 	["matsi_alyxgun_frontshroud"] = {
 		VMBodygroups = {{ind = 5, bg = 1}},
@@ -210,7 +213,13 @@ SWEP.AttachmentElements = {
             Pos = Vector(-2.3, 4.3, 1.52),
             Ang = Angle(0.2, 0.05, 5.1),
         }
-    }
+    },
+	["matsi_alyxgun_laser"] = {
+		VMBodygroups = {
+			{ind = 1, bg = 1},
+			{ind = 6, bg = 1}
+		}
+	},
 }
 
 SWEP.Hook_NameChange = function(wep,name)
