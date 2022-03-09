@@ -1,0 +1,6 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "optica/hlvr/alyxgun/nodraw"
+	"$vertexalpha" "1"
+	"$nodraw" "1"
+}
