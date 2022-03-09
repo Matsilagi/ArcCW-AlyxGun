@@ -1,21 +1,30 @@
-"VertexlitGeneric"
+VertexlitGeneric
 {
 	"$basetexture" 	"optica/HLVR/alyxgun/AlyxGun_Shroud"
-	"$bumpmap" 		"optica/HLVR/alyxgun/AlyxGun_Shroud_n"
 	
-	"$phongexponenttexture" "optica/HLVR/alyxgun/AlyxGun_Shroud_n"
-	"$phong" "1"
-	"$phongboost"	"1"
-	"$envmap" "env_cubemap"
-	"$envmaptint"	"[0.03 0.03 0.03]"
-	"$envmapfresnel"	"1"
-	"$phongfresnelranges"	"[0.22 0.856 20]"
+	"$phong" 1
+	"$phongexponenttexture"    "optica/HLVR/alyxgun/AlyxGun_Shroud_r"
+	"$phongwarptexture"			"optica/HLVR/alyxgun/phongwarp_metallic" 
+	"$phongboost"               "0.5"
+	"$phongfresnelranges"       "[0.3 1 4]"
+	"$phongexponent"            "7"
 
-	$emissiveBlendEnabled 1
-	$emissiveBlendTexture	"dev/null"
-	$emissiveBlendBaseTexture	"optica/HLVR/alyxgun/AlyxGun_Shroud_emissive"
-	$emissiveBlendFlowTexture	"dev/null"
-//	$emissiveBlendTint "[2.52 0.64 0.036]"
-	$emissiveBlendStrength 1
-	$emissiveBlendScrollVector "[0 0]"
+	"$color2"					"[0.4 0.4 0.4]"
+	"$blendTintByBaseAlpha"		"1" 
+
+	"$rimlight"					"1"
+	"$rimmask"					"1"
+	"$rimlightboost"			"0.3"
+	"$rimlightexponent"			"5"
+	
+	"$envmap" "env_cubemap"
+	"$normalmapalphaenvmapmask" "1"
+	"$envmaptint"               "[ 0.01 0.01 0.01 ]"
+				
+	"$bumpmap"                  "optica/HLVR/alyxgun/AlyxGun_Shroud_n"
+	
+	$detail "optica/HLVR/alyxgun/AlyxGun_Shroud_emissive"
+    $detailscale 1        //scales the detail texture to same size as diffuse.
+    $detailblendfactor 1  //lower values make the texture less visible. 0.0 - 1.0
+    $detailblendmode 5    //6 also works.
 }

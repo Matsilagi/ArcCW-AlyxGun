@@ -13,11 +13,8 @@
 
 	"$phongfresnelranges"	"[0.22 0.856 20]"
 	
-	$emissiveBlendEnabled 1
-	$emissiveBlendTexture	"dev/null"
-	$emissiveBlendBaseTexture	"optica/HLVR/alyxgun/alyxgun_clip_g"
-	$emissiveBlendFlowTexture	"dev/null"
-//	$emissiveBlendTint "[2.52 0.64 0.036]"
-	$emissiveBlendStrength 1
-	$emissiveBlendScrollVector "[0 0]"
+	$detail "optica/HLVR/alyxgun/alyxgun_clip_g"
+       $detailscale 1        //scales the detail texture to same size as diffuse.
+       $detailblendfactor 1  //lower values make the texture less visible. 0.0 - 1.0
+       $detailblendmode 5    //6 also works.
 }
