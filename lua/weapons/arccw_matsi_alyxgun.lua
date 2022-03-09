@@ -98,13 +98,12 @@ SWEP.Firemodes = {
         Mode = 1,
     },
     {
-        PrintName = "fcg.safe2",
         Mode = 0,
     }
 }
 
 SWEP.ShootPitch = 100
-SWEP.ShootVol = 120
+SWEP.ShootVol = 120 
 
 SWEP.ProceduralRegularFire = false
 SWEP.ProceduralIronFire = false
@@ -153,23 +152,13 @@ SWEP.HoldtypeHolstered = "normal"
 SWEP.HoldtypeActive = "pistol"
 SWEP.HoldtypeSights = "revolver"
 
-SWEP.IronSightStruct = {
+SWEP.IronSightStruct = { -- Needs to be adjusted, aiming too far left
      Pos = Vector(-2.3, 4.3, 1.52),
      Ang = Angle(0.2, 0.05, 5.1),
      Magnification = 1,
      ViewModelFOV = 55,
     --  SwitchToSound = ratel, -- sound that plays when switching to this sight
     --  SwitchFromSound = ratel
-}
-
-SWEP.ExtraIrons = {
-    {
-        Pos = Vector(-2.55, -1.5, 1),
-        Ang = Angle(1.75, 0, -15),
-        Magnification = 1,
-        ViewModelFOV = 55,
-        CrosshairInSights = true,
-    }
 }
 
 SWEP.ActivePos = Vector(0, 3, 1)
@@ -211,6 +200,16 @@ SWEP.BulletBones = {
 SWEP.AttachmentElements = {
     ["matsi_alyxgun_reservoir"] = {
         VMBodygroups = {{ind = 8, bg = 1}}
+    },
+    ["matsi_alyxgun_burst"] = {
+        VMBodygroups = {
+            {ind = 2, bg = 1},
+            {ind = 5, bg = 1},
+        },
+        Override_IronSightStruct = {
+            Pos = Vector(-2.3, 4.3, 1.52),
+            Ang = Angle(0.2, 0.05, 5.1),
+        }
     }
 }
 
@@ -222,7 +221,21 @@ SWEP.Hook_ModifyBodygroups = function(wep,data)
     local vm = data.vm
     local atts = wep.Attachments
 
-    vm:SetBodygroup(9,10)
+    if atts[2].Installed or atts[5].Installed then
+        vm:SetBodygroup(3,1)
+    else
+        vm:SetBodygroup(3,0)
+    end
+
+    if atts[5].Installed then
+        if wep:Clip1() > 1 then
+            vm:SetBodygroup(9,math.Clamp(11 - wep:Clip1(),0,9))
+        else
+            vm:SetBodygroup(9,10)
+        end
+    else
+        vm:SetBodygroup(9,10)
+    end
 end
 
 -- Animations --
@@ -359,7 +372,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Slide",
-        DefaultAttName = "Standard Frame",
+        DefaultAttName = "Standard Slide",
         DefaultAttIcon = Material("entities/att/acwatt_ud_glock_frame.png", "smooth mips"),
         Slot = "matsi_alyxgun_slide",
     },
