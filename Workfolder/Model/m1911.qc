@@ -62,14 +62,13 @@ $bodygroup "reservoir"
 $cdmaterials "models\weapons\arccw\shared"
 $cdmaterials "Optica\HLVR\AlyxGun\"
 
-
-// $texturegroup "skinfamilies"
-// {
-// 	{ "deagle" "deagle_plastic" "annihilator_slide"}
-// 	{ "deagle_black" "deagle_plastic" "annihilator_slide_black"}
-// 	{ "deagle_gold" "deagle_plastic" "annihilator_slide_gold"}
-// 	{ "deagle_chrome" "deagle_plastic" "annihilator_slide_chrome"}
-// }
+$texturegroup "skinfamilies"
+{
+ { "vr_alyxgun_base" "vr_alyxgun_grip"}
+ { "vr_alyxgun_base" "vr_alyxgun_grip_skin01"}
+ { "vr_alyxgun_base_skin01" "vr_alyxgun_grip"}
+ { "vr_alyxgun_base_skin01" "vr_alyxgun_grip_skin01"}
+}
 
 
 $attachment "1" "vm_barrel" 0.00 5.00 0.00 rotate -0 90 0

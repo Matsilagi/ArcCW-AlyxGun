@@ -5,9 +5,9 @@ VertexlitGeneric
 	"$phong" 1
 	"$phongexponenttexture"     "optica/HLVR/alyxgun/AlyxGun_grip_r"
 	"$phongwarptexture"			"optica/HLVR/alyxgun/phongwarp_metallic" 
-	"$phongboost"               "2"
+	"$phongboost"               "0.2"
 	"$phongfresnelranges"       "[0.3 1 4]"
-	"$phongexponent"            "18"
+	"$phongexponent"            "5"
 
 	"$color2"					"[0.8 0.8 0.8]"
 	"$blendTintByBaseAlpha"		"1" 
