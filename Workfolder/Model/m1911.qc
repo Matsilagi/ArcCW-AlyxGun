@@ -72,8 +72,9 @@ $cdmaterials "Optica\HLVR\AlyxGun\"
 // }
 
 
-$attachment "1" "vm_barrel" 0 0 0 rotate 0 90 -90  //taken from ak qc (its wbtwr too)
-$attachment "2" "vm_pivot" 0 0 0 rotate 0 90 -90
+$attachment "1" "vm_barrel" 0.00 5.00 0.00 rotate -0 90 0
+$attachment "2" "vm_pivot" -0.20 1.80 1.50 rotate -0 145 -90
+$attachment "3" "vm_pivot" -0.00 -0.45 6.25 rotate -90 0 0
 $attachment "5" "camera" 0 0 0 rotate -90 0 0
  
 $surfaceprop "default"

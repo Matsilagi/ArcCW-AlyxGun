@@ -15,7 +15,7 @@ SWEP.ShellSounds = ArcCW.PistolShellSoundsTable
 
 SWEP.MuzzleEffectAttachment = 1
 SWEP.CaseEffectAttachment = 2
-SWEP.CamAttachment = 3
+SWEP.CamAttachment = 5
 SWEP.TracerNum = 1
 SWEP.TracerCol = Color(25, 255, 25)
 SWEP.TracerWidth = 2
@@ -70,7 +70,7 @@ SWEP.ShootEntity = nil
 SWEP.MuzzleVelocity = 315
 SWEP.PhysBulletMuzzleVelocity = 315
 
-SWEP.BodyDamageMults = ArcCW.UC.BodyDamageMults
+SWEP.BodyDamageMults = ArcCW.BodyDamageMults
 
 -- Mag size --
 
@@ -201,11 +201,11 @@ SWEP.AttachmentElements = {
     ["matsi_alyxgun_reservoir"] = {
         VMBodygroups = {{ind = 8, bg = 1}}
     },
+	["matsi_alyxgun_frontshroud"] = {
+		VMBodygroups = {{ind = 5, bg = 1}},
+	},
     ["matsi_alyxgun_burst"] = {
-        VMBodygroups = {
-            {ind = 2, bg = 1},
-            {ind = 5, bg = 1},
-        },
+        VMBodygroups = {{ind = 2, bg = 1}},
         Override_IronSightStruct = {
             Pos = Vector(-2.3, 4.3, 1.52),
             Ang = Angle(0.2, 0.05, 5.1),
@@ -240,7 +240,7 @@ end
 
 -- Animations --
 
-SWEP.Hook_Think = ArcCW.UD.ADSReload
+SWEP.Hook_Think = ArcCW.ADSReload
 
 -- CHAN_ITEM doesn't sound too right
 local ci = CHAN_AUTO
@@ -359,16 +359,8 @@ SWEP.Attachments = {
     {
         PrintName = "Optic",
         DefaultAttName = "Iron Sights",
-        Slot = {"optic_lp"},
-        Bone = "glock_slide",
-        Offset = {
-            vpos = Vector(0, -0.55, -0.15),
-            vang = Angle(90, 0, -90),
-        },
-        CorrectivePos = Vector(0, 0, 0.05),
-        VMScale = Vector(1, 1, 1),
-        WMScale = Vector(1.25, 1.25, 1.25),
-        --InstalledEles = {"ud_glock_rail_optic"},
+        Slot = {"matsi_alyxgun_iron"},
+		RequireFlags = {"front_shroud"},
     },
     {
         PrintName = "Slide",
@@ -379,23 +371,12 @@ SWEP.Attachments = {
     {
         PrintName = "Muzzle",
         DefaultAttName = "Standard Muzzle",
-        Slot = {"muzzle"},
-        Bone = "glock_flash",
-        Offset = {
-            vpos = Vector(0, 0, 0.0),
-            vang = Angle(90, 0, -90),
-        },
-        ExcludeFlags = {"sd"},
-        VMScale = Vector(0.8, 0.8, 0.8)
+        Slot = "matsi_alyxgun_muzzle",
     },
     {
         PrintName = "Tactical",
-        Slot = {"tac_pistol"},
-        Bone = "glock_parent",
-        Offset = {
-            vpos = Vector(0, -1.3, 5),
-            vang = Angle(90, 0, -90),
-        },
+        Slot = {"matsi_alyxgun_tactical"},
+		RequireFlags = {"front_shroud"},
     },
     {
         PrintName = "Magazine",
