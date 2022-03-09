@@ -1,4 +1,5 @@
 att.PrintName = "Holo-Sight"
+att.Icon = Material("entities/acwatt_ahololens.png")
 att.Description = "Fancy Holographic-projection sights."
 
 att.SortOrder = 3
