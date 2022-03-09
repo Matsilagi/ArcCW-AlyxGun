@@ -5,7 +5,7 @@ att.Slot = "matsi_alyxgun_skin"
 att.Desc_Neutrals = {
     "Cosmetical only. A mix for those who like their stuff personal."
 }
-att.SortOrder = 1
+att.SortOrder = 4
 
 att.IgnorePickX = true
 att.ActivateElements = {"masti_alyxgun_skin_silver_wood"}
