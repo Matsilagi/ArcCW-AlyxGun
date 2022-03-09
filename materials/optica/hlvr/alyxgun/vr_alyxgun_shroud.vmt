@@ -14,8 +14,8 @@ VertexlitGeneric
 
 	"$rimlight"					"1"
 	"$rimmask"					"1"
-	"$rimlightboost"			"0.3"
-	"$rimlightexponent"			"5"
+	"$rimlightboost"			"5"
+	"$rimlightexponent"			"12"
 	
 	"$envmap" "env_cubemap"
 	"$normalmapalphaenvmapmask" "1"
