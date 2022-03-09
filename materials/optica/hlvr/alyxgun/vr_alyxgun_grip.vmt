@@ -1,11 +1,25 @@
-"VertexlitGeneric"
+VertexlitGeneric
 {
 	"$basetexture" 	"optica/HLVR/alyxgun/AlyxGun_grip"
-	"$bumpmap" 		"optica/HLVR/alyxgun/AlyxGun_grip_n"
-     
-	"$phongexponenttexture" "optica/HLVR/alyxgun/AlyxGun_grip_n"
-	"$phong" "1"
-	"$phongboost"	"10"
+	
+	"$phong" 1
+	"$phongexponenttexture"     "optica/HLVR/alyxgun/AlyxGun_grip_r"
+	"$phongwarptexture"			"optica/HLVR/alyxgun/phongwarp_metallic" 
+	"$phongboost"               "2"
+	"$phongfresnelranges"       "[0.3 1 4]"
+	"$phongexponent"            "18"
 
-	"$phongfresnelranges"	"[0.22 0.856 20]"
+	"$color2"					"[0.8 0.8 0.8]"
+	"$blendTintByBaseAlpha"		"1" 
+
+	"$rimlight"					"1"
+	"$rimmask"					"1"
+	"$rimlightboost"			"0.3"
+	"$rimlightexponent"			"5"
+	
+	"$envmap" "env_cubemap"
+	"$normalmapalphaenvmapmask" "1"
+	"$envmaptint"               "[ 0.002 0.002 0.002 ]"
+				
+	"$bumpmap"                  "optica/HLVR/alyxgun/AlyxGun_grip_n"
 }
