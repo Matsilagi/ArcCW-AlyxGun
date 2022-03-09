@@ -31,7 +31,7 @@ SWEP.TrueName = "Para-Ordnance P14-45"
 -- Trivia --
 
 SWEP.Trivia_Class = "Pistol"
-SWEP.Trivia_Desc = [[Standard .45 ACP pistol given to Alyx by a different scientist from a different dimension, in a different timeline. Works like any other gun in this side of reality, but has its own few quirks to learn. It's also much more modular than the one given to her by Eli in this current timeline.]]
+SWEP.Trivia_Desc = [[Standard .45 ACP pistol given by Russel to a younger Alyx from a different timeline. Works like any other gun in this side of reality, but has its own few quirks to learn. It's also much more modular than the one given to her by Eli in our current timeline.]]
 SWEP.Trivia_Manufacturer = "Le Clarion"
 SWEP.Trivia_Calibre = ".45 ACP"
 SWEP.Trivia_Mechanism = "Short Recoil"
@@ -228,6 +228,15 @@ SWEP.AttachmentElements = {
 			{ind = 7, bg = 1}
 		},
 	},
+	["masti_alyxgun_skin_silver_wood"] = {
+        VMSkin = 1,
+    },
+	["masti_alyxgun_skin_black_white"] = {
+        VMSkin = 2,
+    },
+	["masti_alyxgun_skin_black"] = {
+        VMSkin = 3,
+    },
 }
 
 SWEP.Hook_NameChange = function(wep,name)
@@ -416,14 +425,8 @@ SWEP.Attachments = {
         },
     },
     {
-        PrintName = "Charm",
-        Slot = {"charm", "fml_charm"},
-        FreeSlot = true,
-        Bone = "glock_slide",
-        Offset = {
-            vpos = Vector(0.4, 0, 4),
-            vang = Angle(90, 0, -90),
-        },
-        VMScale = Vector(0.7, 0.7, 0.7),
+        PrintName = "Skin",
+        Slot = {"matsi_alyxgun_skin"},
+        FreeSlot = true
     },
 }
