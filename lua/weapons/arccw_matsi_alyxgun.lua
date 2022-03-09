@@ -276,31 +276,47 @@ SWEP.Animations = {
     ["draw_empty"] = {
         Source = "draw_empty",
     },
-    -- ["holster"] = {
-    --     Source = "holster",
-    --     LHIK = true,
-    --     LHIKIn = 0.4,
-    --     LHIKEaseIn = 0.4,
-    --     LHIKEaseOut = 0,
-    --     LHIKOut = 0,
-    --     SoundTable = {
-    --         {s = common .. "cloth_2.ogg", t = 0},
-    --         {s = path .. "holster.ogg", t = 0.2}, -- Not Temporary
-    --     },
-    -- },
-    -- ["holster_empty"] = {
-    --     Source = "holster_empty",
-    --     Time = 12 / 30,
-    --     LHIK = true,
-    --     LHIKIn = 0.4,
-    --     LHIKEaseIn = 0.4,
-    --     LHIKEaseOut = 0,
-    --     LHIKOut = 0,
-    --     SoundTable = {
-    --         {s = common .. "cloth_2.ogg", t = 0},
-    --         {s = path .. "holster.ogg", t = 0.2}, -- Not Temporary
-    --     },
-    -- },
+    ["enter_inspect"] = {
+        Source = "enter_inspect",
+        Time = 30 / 32,
+        LHIK = true,
+        LHIKIn = 0.3,
+        LHIKOut = 0,
+        SoundTable = {
+        },
+    },
+	["enter_inspect_empty"] = {
+        Source = "enter_inspect_empty",
+        Time = 30 / 32,
+        LHIK = true,
+        LHIKIn = 0.3,
+        LHIKOut = 0,
+        SoundTable = {
+        },
+    },
+    ["idle_inspect"] = {
+        Source = "idle_inspect",
+        Time = 1/32,
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKOut = 0,
+    },
+    ["exit_inspect"] = {
+        Source = "exit_inspect",
+        Time = 89 / 32,
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKEaseOut = 0.3,
+        LHIKOut = 0.84,
+    },
+	["exit_inspect_empty"] = {
+        Source = "exit_inspect_empty",
+        Time = 89 / 32,
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKEaseOut = 0.3,
+        LHIKOut = 0.84,
+    },
     ["fire"] = {
         Source = "fire",
         Time = 16 / 30,
