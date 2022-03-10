@@ -213,8 +213,8 @@ SWEP.AttachmentElements = {
 			{ind = 4, bg = 1}
 		},
         Override_IronSightStruct = {
-            Pos = Vector(-2.31, 3.769, 1.478),
-            Ang = Angle(0.421, -0.007, 5.206),
+            Pos = Vector(-2.27, 3.769, 1.09),
+            Ang = Angle(1.500, -0.008, 5.205),
         }
     },
 	["matsi_alyxgun_laser"] = {
