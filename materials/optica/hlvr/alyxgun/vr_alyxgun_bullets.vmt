@@ -1,18 +1,28 @@
-"VertexlitGeneric"
+VertexlitGeneric
 {
 	"$basetexture" 	"optica/HLVR/alyxgun/AlyxGun_bullets"
-	"$bumpmap" 		"optica/HLVR/alyxgun/AlyxGun_bullets_n"
-     
-	"$phongexponenttexture" "optica/HLVR/alyxgun/AlyxGun_bullets_n"
-	"$phong" "1"
-	"$phongboost"	"50"
+	
+	"$phong" 1
+	"$phongexponenttexture"     "optica/HLVR/alyxgun/AlyxGun_bullets_r"
+	"$phongwarptexture"			"optica/HLVR/alyxgun/phongwarp_metallic" 
+	"$phongboost"               "10"
+	"$phongfresnelranges"       "[1 4 8]"
+	"$phongexponent"            "25"
+
+	"$color2"					"[0.6 0.6 0.6]"
+	"$blendTintByBaseAlpha"		"1" 
+
+	"$rimlight"					"1"
+	"$rimmask"					"1"
+	"$rimlightboost"			"0.3"
+	"$rimlightexponent"			"5"
 	
 	"$envmap" "env_cubemap"
-	"$envmaptint"	"[0.03 0.03 0.03]"
-	"$envmapfresnel"	"1"
-
-	"$phongfresnelranges"	"[0.22 0.856 20]"
-
+	"$normalmapalphaenvmapmask" "1"
+	"$envmaptint"               "[ 1 1 1 ]"
+				
+	"$bumpmap"                  "optica/HLVR/alyxgun/AlyxGun_bullets_n"
+	
        $detail "optica/HLVR/alyxgun/AlyxGun_bullets_emissive"
        $detailscale 1        //scales the detail texture to same size as diffuse.
        $detailblendfactor 1  //lower values make the texture less visible. 0.0 - 1.0

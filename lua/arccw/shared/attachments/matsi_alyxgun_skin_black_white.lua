@@ -1,5 +1,5 @@
-att.PrintName = "LeClarion - Alliance"
-att.AbbrevName = "Alliance"
+att.PrintName = "LeClarion - Oppressor"
+att.AbbrevName = "Oppressor"
 att.Description = "A Black finish with a white grip. Really shows how oppressing the Combine are."
 att.Slot = "matsi_alyxgun_skin"
 att.Desc_Neutrals = {
