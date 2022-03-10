@@ -1,0 +1,24 @@
+VertexlitGeneric
+{
+	"$basetexture" 	"optica/HLVR/alyxgun/pistol_case"
+	
+	"$phong" 1
+	"$phongwarptexture"			"optica/HLVR/alyxgun/phongwarp_metallic" 
+	"$phongboost"               "0.5"
+	"$phongfresnelranges"       "[1 4 8]"
+	"$phongexponent"            "25"
+
+	"$color2"					"[1 1 1]"
+	"$blendTintByBaseAlpha"		"1" 
+
+	"$rimlight"					"1"
+	"$rimmask"					"1"
+	"$rimlightboost"			"0.3"
+	"$rimlightexponent"			"5"
+	
+	"$envmap" "env_cubemap"
+	"$normalmapalphaenvmapmask" "1"
+	"$envmaptint"               "[ 1 1 1 ]"
+				
+	"$bumpmap"                  "optica/HLVR/alyxgun/pistol_case_n"
+}
