@@ -255,7 +255,7 @@ SWEP.Hook_ModifyBodygroups = function(wep,data)
 
     if atts[5].Installed then
         if wep:Clip1() > 1 then
-            vm:SetBodygroup(9,math.Clamp(11 - wep:Clip1(),0,9))
+            vm:SetBodygroup(9,math.Clamp(11 - wep:Clip1() + (wep.TickCount or 0),0,9))
         else
             vm:SetBodygroup(9,10)
         end

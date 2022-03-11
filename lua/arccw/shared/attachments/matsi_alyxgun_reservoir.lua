@@ -16,11 +16,14 @@ att.Hook_Think = function(wep)
             wep.Reservoir = math.Clamp(wep:Clip1(),0,10)
         elseif wep.Reservoir and math.Clamp(wep:Clip1(),0,10) > wep.Reservoir then
             local ticks = 11 - wep.Reservoir
+            wep.TickCount = ticks
             for i = 1, ticks do
                 timer.Simple(.075 * i,function()
                     if i == ticks then
+                        wep.TickCount = nil
                         wep:EmitSound(path .. "reload_hop_end.ogg")
                     else
+                        wep.TickCount = ticks - i
                         wep:EmitSound(path .. "reload_hop_0"..math.random(1,5)..".ogg")
                     end
                 end)

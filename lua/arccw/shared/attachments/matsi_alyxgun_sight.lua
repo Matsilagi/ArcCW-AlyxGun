@@ -13,6 +13,7 @@ att.Desc_Cons = {
 att.Slot = "matsi_alyxgun_iron"
 
 att.Model = "models/weapons/hlvr/c_alyxgun_holodummy.mdl"
+att.ModelOffset = Vector(0, 0, 0)
 
 att.AdditionalSights = {
     {
