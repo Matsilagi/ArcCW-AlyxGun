@@ -1,0 +1,8 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "optica/HLVR/alyxgun/alyxgun_sight_hsp"
+	
+	"$translucent" "1"
+	"$additive"
+	
+}
