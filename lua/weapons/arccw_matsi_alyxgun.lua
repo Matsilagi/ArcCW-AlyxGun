@@ -424,7 +424,7 @@ end
 function SWEP:DrawHolosight(hsp, asight)
     if IsValid(hsp) then
         local hsm = self.WM[3].Model
-        print(hsp:GetModel(),hsm:GetModel())
+        -- print(hsp:GetModel(),hsm:GetModel())
         if !IsValid(hsm) then return end
 
         -- ArcCW.VM_OverDraw = true
