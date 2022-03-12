@@ -195,14 +195,6 @@ SWEP.BulletBones = {
 }
 
 SWEP.AttachmentElements = {
-    ["matsi_alyxgun_reservoir"] = {
-        VMBodygroups = {
-			{ind = 8, bg = 1}
-		}
-    },
-	["matsi_alyxgun_frontshroud"] = {
-		VMBodygroups = {{ind = 5, bg = 1}},
-	},
     ["matsi_alyxgun_burst"] = {
         VMBodygroups = {
 			{ind = 2, bg = 1},
@@ -213,57 +205,46 @@ SWEP.AttachmentElements = {
             Ang = Angle(1.500, -0.008, 5.205),
         }
     },
-	["matsi_alyxgun_laser"] = {
-		VMBodygroups = {
-			{ind = 1, bg = 1},
-			{ind = 6, bg = 1}
-		}
-	},
-	["matsi_alyxgun_iron"] = {
-		VMBodygroups = {
-			{ind = 7, bg = 1}
-		},
-	},
-	["masti_alyxgun_skin_silver_wood"] = {
-        VMSkin = 1,
-    },
-	["masti_alyxgun_skin_black_white"] = {
-        VMSkin = 2,
-    },
-	["masti_alyxgun_skin_black"] = {
-        VMSkin = 3,
-    },
+
+    ["matsi_alyxgun_reservoir"] = {VMBodygroups = {{ind = 8, bg = 1}}},
+	["matsi_alyxgun_frontshroud"] = {VMBodygroups = {{ind = 5, bg = 1}}},
+	["matsi_alyxgun_laser"] = {VMBodygroups = {{ind = 1, bg = 1},   {ind = 6, bg = 1}}},
+	["matsi_alyxgun_iron"] = {VMBodygroups = {{ind = 7, bg = 1}}},
+
+	["masti_alyxgun_skin_silver_wood"] = {VMSkin = 1},
+	["masti_alyxgun_skin_black_white"] = {VMSkin = 2},
+	["masti_alyxgun_skin_black"] = {VMSkin = 3},
 }
 
 SWEP.Hook_NameChange = function(wep,name)
     
 end
 
-SWEP.Hook_ModifyBodygroups = function(wep,data)
-    local vm = data.vm
-    local atts = wep.Attachments
+-- SWEP.Hook_ModifyBodygroups = function(wep,data)
+--     local vm = data.vm
+--     local atts = wep.Attachments
 
-    if atts[2].Installed or atts[5].Installed then
-        vm:SetBodygroup(3,1)
-    else
-        vm:SetBodygroup(3,0)
-    end
+--     if atts[2].Installed or atts[5].Installed then
+--         vm:SetBodygroup(3,1)
+--     else
+--         vm:SetBodygroup(3,0)
+--     end
 
-    if atts[5].Installed then
-        if wep:Clip1() > 0 then
-            vm:SetBodygroup(9,math.Clamp(10 - wep:Clip1() + (wep.TickCount or 0),0,9))
-        else
-            vm:SetBodygroup(9,10)
-        end
-    else
-        vm:SetBodygroup(9,10)
-    end
-end
+--     if atts[5].Installed then
+--         if wep:Clip1() > 0 then
+--             vm:SetBodygroup(9,math.Clamp(10 - wep:Clip1() + (wep.TickCount or 0),0,9))
+--         else
+--             vm:SetBodygroup(9,10)
+--         end
+--     else
+--         vm:SetBodygroup(9,10)
+--     end
+-- end
 
 -- Animations --
 
 SWEP.Hook_Think = ArcCW.ADSReload
-
+local common = ")^/arccw_uc/common/"
 -- CHAN_ITEM doesn't sound too right
 local ci = CHAN_AUTO
 local ratel = {path .. "pistol_rattle_1.ogg", path .. "pistol_rattle_2.ogg", path .. "pistol_rattle_3.ogg"}
@@ -385,7 +366,7 @@ SWEP.Attachments = {
         DefaultAttName = "Iron Sights",
         Slot = {"matsi_alyxgun_iron"},
 		Bone = "tag_weapon",
-		RequireFlags = {"front_shroud"},
+		InstalledEles = {"matsi_alyxgun_frontshroud"},
 		Offset = {
 			vang = Angle(0,-90,0)
 		},
@@ -395,15 +376,15 @@ SWEP.Attachments = {
         DefaultAttName = "Standard Slide",
         Slot = "matsi_alyxgun_slide",
     },
-    {
-        PrintName = "Muzzle",
-        DefaultAttName = "Standard Muzzle",
-        Slot = "matsi_alyxgun_muzzle",
-    },
+    -- {
+    --     PrintName = "Muzzle",
+    --     DefaultAttName = "Standard Muzzle",
+    --     Slot = "matsi_alyxgun_muzzle",
+    -- },
     {
         PrintName = "Tactical",
         Slot = {"matsi_alyxgun_tactical"},
-		RequireFlags = {"front_shroud"},
+		InstalledEles = {"matsi_alyxgun_frontshroud"},
 		Bone = "vm_pivot", --"tag_weapon"
         Offset = {
 			vpos = Vector(-0, 0.37, 5.65), --Vector(0, 5.715, -0.35),
@@ -424,3 +405,74 @@ SWEP.Attachments = {
         FreeSlot = true
     },
 }
+
+function SWEP:DoHolosight()
+    local asight = self:GetActiveSights()
+    if !asight then return end
+    local aslot = self.Attachments[asight.Slot] or {}
+
+    local hsm = asight.HolosightModel
+
+    if !hsm then
+        self:SetupActiveSights()
+        return
+    end
+
+    self:DrawHolosight(hsm, asight)
+end
+
+function SWEP:DrawHolosight(hsp, asight)
+    if IsValid(hsp) then
+        local hsm = self.WM[3].Model
+        print(hsp:GetModel(),hsm:GetModel())
+        if !IsValid(hsm) then return end
+
+        -- ArcCW.VM_OverDraw = true
+        -- hsp:Remove()
+        -- hsp.NoDraw = true
+        -- hsm.NoDraw = true
+
+        -- hsp:SetNoDraw(true)
+        -- hsp:SetNoDraw(true)
+        
+        -- hsp:DrawModel()
+        -- hsm:DrawModel()
+
+
+        -- render.SetStencilWriteMask( 0xFF )
+        -- render.SetStencilTestMask( 0xFF )
+        -- render.SetStencilReferenceValue( 0 )
+        -- render.SetStencilCompareFunction( STENCIL_ALWAYS )
+        -- render.SetStencilPassOperation( STENCIL_KEEP )
+        -- render.SetStencilFailOperation( STENCIL_KEEP )
+        -- render.SetStencilZFailOperation( STENCIL_KEEP )
+        -- render.ClearStencil()
+
+        -- -- Enable stencils
+        -- render.SetStencilEnable( true )
+        -- -- Set the reference value to 1. This is what the compare function tests against
+        -- render.SetStencilReferenceValue( 1 )
+        -- -- Refuse to write things to the screen unless that pixel's value is 1
+        -- render.SetStencilCompareFunction( STENCIL_EQUAL )
+        -- -- Write a 1 to the centre third of the screen. Because we cleared it earlier, everything is currently 0
+        -- local w, h = ScrW() / 3, ScrH() / 3
+        -- local x_start, y_start = w, h
+        -- local x_end, y_end = x_start + w, y_start + h
+        -- render.ClearStencilBufferRectangle( x_start, y_start, x_end, y_end, 1 )
+    
+        -- render.SetBlend(1)
+
+        -- hsm:DrawModel()
+        -- hsp:DrawModel()
+        -- render.OverrideDepthEnable( true, true )
+
+        -- hsm:DrawModel()
+        -- render.CullMode( 1 )
+        -- hsp:DrawModel()
+
+        -- render.CullMode( 0 )
+        -- render.OverrideDepthEnable( true, true )
+        -- render.SetBlend(1)
+        -- render.SetStencilEnable( false )
+end
+end
