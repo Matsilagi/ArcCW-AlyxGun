@@ -186,18 +186,12 @@ SWEP.WorldModelOffset = {
 
 -- UC firing soudns are temporary
 local path = ")^weapons/arccw_alyx/pistol/"
-local path1 = ")^weapons/arccw_ud/uzi/"
-local common = ")^/arccw_uc/common/"
 SWEP.ShootSound = {path .. "fire_01.ogg",path .. "fire_02.ogg",path .. "fire_03.ogg",path .. "fire_04.ogg"}
-SWEP.ShootSoundSilenced = path .. "fire_supp.ogg"
-SWEP.DistantShootSound = {path .. "fire-dist-01.ogg", path .. "fire-dist-02.ogg", path .. "fire-dist-03.ogg", path .. "fire-dist-04.ogg", path .. "fire-dist-05.ogg", path .. "fire-dist-06.ogg"} -- Maybe Not Placeholder
-SWEP.DistantShootSoundSilenced = common .. "sup_tail.ogg"
 SWEP.ShootDrySound = path .. "dryfire.ogg"
 
 -- Bodygroups --
 
 SWEP.BulletBones = {
-    [2] = "glock_bullet1"
 }
 
 SWEP.AttachmentElements = {
@@ -256,7 +250,7 @@ SWEP.Hook_ModifyBodygroups = function(wep,data)
     end
 
     if atts[5].Installed then
-        if wep:Clip1() > 1 then
+        if wep:Clip1() > 0 then
             vm:SetBodygroup(9,math.Clamp(10 - wep:Clip1() + (wep.TickCount or 0),0,9))
         else
             vm:SetBodygroup(9,10)
@@ -399,7 +393,6 @@ SWEP.Attachments = {
     {
         PrintName = "Slide",
         DefaultAttName = "Standard Slide",
-        DefaultAttIcon = Material("entities/att/acwatt_ud_glock_frame.png", "smooth mips"),
         Slot = "matsi_alyxgun_slide",
     },
     {
@@ -420,7 +413,6 @@ SWEP.Attachments = {
     {
         PrintName = "Magazine",
         Slot = {"matsi_alyxgun_mag"},
-        Bone = "glock_parent",
         Offset = {
             vpos = Vector(0, -1.3, 5),
             vang = Angle(90, 0, -90),
