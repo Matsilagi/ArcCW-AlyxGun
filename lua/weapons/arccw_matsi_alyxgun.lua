@@ -153,6 +153,8 @@ SWEP.HoldtypeHolstered = "normal"
 SWEP.HoldtypeActive = "pistol"
 SWEP.HoldtypeSights = "revolver"
 
+SWEP.LaserIronsAngle = Angle(0,1.25,0)
+
 SWEP.IronSightStruct = { -- Needs to be adjusted, aiming too far left
      Pos = Vector(-2.31, 3.769, 1.478),
      Ang = Angle(0.421, -0.007, 5.206),
@@ -255,7 +257,7 @@ SWEP.Hook_ModifyBodygroups = function(wep,data)
 
     if atts[5].Installed then
         if wep:Clip1() > 1 then
-            vm:SetBodygroup(9,math.Clamp(11 - wep:Clip1() + (wep.TickCount or 0),0,9))
+            vm:SetBodygroup(9,math.Clamp(10 - wep:Clip1() + (wep.TickCount or 0),0,9))
         else
             vm:SetBodygroup(9,10)
         end
@@ -409,10 +411,10 @@ SWEP.Attachments = {
         PrintName = "Tactical",
         Slot = {"matsi_alyxgun_tactical"},
 		RequireFlags = {"front_shroud"},
-		Bone = "tag_weapon",
+		Bone = "vm_pivot", --"tag_weapon"
         Offset = {
-			vpos = Vector(0, 5.715, -0.35),
-			vang = Angle(0,-180,0)
+			vpos = Vector(-0, 0.37, 5.65), --Vector(0, 5.715, -0.35),
+			vang = Angle(-90,90,0) --Angle(0,-90,0)
 		},
     },
     {

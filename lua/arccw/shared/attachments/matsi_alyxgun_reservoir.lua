@@ -6,7 +6,7 @@ This requires the operator to reload twice to reach maximum capacity.]]
 
 att.Slot = "matsi_alyxgun_mag"
 
-att.Override_ChamberSize = 11
+att.Override_ChamberSize = 10
 
 local path = ")^weapons/arccw_alyx/pistol/"
 
@@ -15,7 +15,7 @@ att.Hook_Think = function(wep)
         if wep.Reservoir == nil or wep:Clip1() < wep.Reservoir then
             wep.Reservoir = math.Clamp(wep:Clip1(),0,10)
         elseif wep.Reservoir and math.Clamp(wep:Clip1(),0,10) > wep.Reservoir then
-            local ticks = 11 - wep.Reservoir
+            local ticks = 10 - wep.Reservoir
             wep.TickCount = ticks
             for i = 1, ticks do
                 timer.Simple(.075 * i,function()
