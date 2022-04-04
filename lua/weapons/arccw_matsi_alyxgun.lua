@@ -220,26 +220,26 @@ SWEP.Hook_NameChange = function(wep,name)
     
 end
 
--- SWEP.Hook_ModifyBodygroups = function(wep,data)
---     local vm = data.vm
---     local atts = wep.Attachments
+SWEP.Hook_ModifyBodygroups = function(wep,data)
+    local vm = data.vm
+    local atts = wep.Attachments
 
---     if atts[2].Installed or atts[5].Installed then
---         vm:SetBodygroup(3,1)
---     else
---         vm:SetBodygroup(3,0)
---     end
+    if atts[1].Installed or atts[4].Installed then
+        vm:SetBodygroup(3,1)
+    else
+        vm:SetBodygroup(3,0)
+    end
 
---     if atts[5].Installed then
---         if wep:Clip1() > 0 then
---             vm:SetBodygroup(9,math.Clamp(10 - wep:Clip1() + (wep.TickCount or 0),0,9))
---         else
---             vm:SetBodygroup(9,10)
---         end
---     else
---         vm:SetBodygroup(9,10)
---     end
--- end
+    if atts[4].Installed then
+        if wep:Clip1() > 0 then
+            vm:SetBodygroup(9,math.Clamp(10 - wep:Clip1() + (wep.TickCount or 0),0,9))
+        else
+            vm:SetBodygroup(9,10)
+        end
+    else
+        vm:SetBodygroup(9,10)
+    end
+end
 
 -- Animations --
 
