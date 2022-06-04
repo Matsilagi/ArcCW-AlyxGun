@@ -370,6 +370,7 @@ SWEP.Attachments = {
 		Offset = {
 			vang = Angle(0,-90,0)
 		},
+        CorrectivePos = Vector(0, 0, -0.09),
     },
     {
         PrintName = "Slide",
@@ -406,73 +407,73 @@ SWEP.Attachments = {
     },
 }
 
-function SWEP:DoHolosight()
-    local asight = self:GetActiveSights()
-    if !asight then return end
-    local aslot = self.Attachments[asight.Slot] or {}
+-- function SWEP:DoHolosight()
+    -- local asight = self:GetActiveSights()
+    -- if !asight then return end
+    -- local aslot = self.Attachments[asight.Slot] or {}
 
-    local hsm = asight.HolosightModel
+    -- local hsm = asight.HolosightModel
 
-    if !hsm then
-        self:SetupActiveSights()
-        return
-    end
+    -- if !hsm then
+        -- self:SetupActiveSights()
+        -- return
+    -- end
 
-    self:DrawHolosight(hsm, asight)
-end
+    -- self:DrawHolosight(hsm, asight)
+-- end
 
-function SWEP:DrawHolosight(hsp, asight)
-    if IsValid(hsp) then
-        local hsm = self.WM[3].Model
-        -- print(hsp:GetModel(),hsm:GetModel())
-        if !IsValid(hsm) then return end
+-- function SWEP:DrawHolosight(hsp, asight)
+    -- if IsValid(hsp) then
+        -- local hsm = self.WM[3].Model
+        -- -- print(hsp:GetModel(),hsm:GetModel())
+        -- if !IsValid(hsm) then return end
 
-        -- ArcCW.VM_OverDraw = true
-        -- hsp:Remove()
-        -- hsp.NoDraw = true
-        -- hsm.NoDraw = true
+        -- -- ArcCW.VM_OverDraw = true
+        -- -- hsp:Remove()
+        -- -- hsp.NoDraw = true
+        -- -- hsm.NoDraw = true
 
-        -- hsp:SetNoDraw(true)
-        -- hsp:SetNoDraw(true)
+        -- -- hsp:SetNoDraw(true)
+        -- -- hsp:SetNoDraw(true)
         
-        -- hsp:DrawModel()
-        -- hsm:DrawModel()
+        -- -- hsp:DrawModel()
+        -- -- hsm:DrawModel()
 
 
-        -- render.SetStencilWriteMask( 0xFF )
-        -- render.SetStencilTestMask( 0xFF )
-        -- render.SetStencilReferenceValue( 0 )
-        -- render.SetStencilCompareFunction( STENCIL_ALWAYS )
-        -- render.SetStencilPassOperation( STENCIL_KEEP )
-        -- render.SetStencilFailOperation( STENCIL_KEEP )
-        -- render.SetStencilZFailOperation( STENCIL_KEEP )
-        -- render.ClearStencil()
+        -- -- render.SetStencilWriteMask( 0xFF )
+        -- -- render.SetStencilTestMask( 0xFF )
+        -- -- render.SetStencilReferenceValue( 0 )
+        -- -- render.SetStencilCompareFunction( STENCIL_ALWAYS )
+        -- -- render.SetStencilPassOperation( STENCIL_KEEP )
+        -- -- render.SetStencilFailOperation( STENCIL_KEEP )
+        -- -- render.SetStencilZFailOperation( STENCIL_KEEP )
+        -- -- render.ClearStencil()
 
-        -- -- Enable stencils
-        -- render.SetStencilEnable( true )
-        -- -- Set the reference value to 1. This is what the compare function tests against
-        -- render.SetStencilReferenceValue( 1 )
-        -- -- Refuse to write things to the screen unless that pixel's value is 1
-        -- render.SetStencilCompareFunction( STENCIL_EQUAL )
-        -- -- Write a 1 to the centre third of the screen. Because we cleared it earlier, everything is currently 0
-        -- local w, h = ScrW() / 3, ScrH() / 3
-        -- local x_start, y_start = w, h
-        -- local x_end, y_end = x_start + w, y_start + h
-        -- render.ClearStencilBufferRectangle( x_start, y_start, x_end, y_end, 1 )
+        -- -- -- Enable stencils
+        -- -- render.SetStencilEnable( true )
+        -- -- -- Set the reference value to 1. This is what the compare function tests against
+        -- -- render.SetStencilReferenceValue( 1 )
+        -- -- -- Refuse to write things to the screen unless that pixel's value is 1
+        -- -- render.SetStencilCompareFunction( STENCIL_EQUAL )
+        -- -- -- Write a 1 to the centre third of the screen. Because we cleared it earlier, everything is currently 0
+        -- -- local w, h = ScrW() / 3, ScrH() / 3
+        -- -- local x_start, y_start = w, h
+        -- -- local x_end, y_end = x_start + w, y_start + h
+        -- -- render.ClearStencilBufferRectangle( x_start, y_start, x_end, y_end, 1 )
     
-        -- render.SetBlend(1)
+        -- -- render.SetBlend(1)
 
-        -- hsm:DrawModel()
-        -- hsp:DrawModel()
-        -- render.OverrideDepthEnable( true, true )
+        -- -- hsm:DrawModel()
+        -- -- hsp:DrawModel()
+        -- -- render.OverrideDepthEnable( true, true )
 
-        -- hsm:DrawModel()
-        -- render.CullMode( 1 )
-        -- hsp:DrawModel()
+        -- -- hsm:DrawModel()
+        -- -- render.CullMode( 1 )
+        -- -- hsp:DrawModel()
 
-        -- render.CullMode( 0 )
-        -- render.OverrideDepthEnable( true, true )
-        -- render.SetBlend(1)
-        -- render.SetStencilEnable( false )
-end
-end
+        -- -- render.CullMode( 0 )
+        -- -- render.OverrideDepthEnable( true, true )
+        -- -- render.SetBlend(1)
+        -- -- render.SetStencilEnable( false )
+-- end
+-- end
