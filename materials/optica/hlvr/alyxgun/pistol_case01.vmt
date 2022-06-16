@@ -18,7 +18,7 @@ VertexlitGeneric
 	
 	"$envmap" "env_cubemap"
 	"$normalmapalphaenvmapmask" "1"
-	"$envmaptint"               "[ 1 1 1 ]"
+	"$envmaptint"               "[ 0.1 0.1 0.1 ]"
 				
 	"$bumpmap"                  "optica/HLVR/alyxgun/pistol_case_n"
 }
