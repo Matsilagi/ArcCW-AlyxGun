@@ -1,0 +1,6 @@
+"vertexlitgeneric"
+{
+	"$basetexture" "optica/HLVR/alyxgun/lens2"
+	$nocull 0
+	$translucent 1
+}
