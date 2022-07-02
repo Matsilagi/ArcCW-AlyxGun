@@ -33,6 +33,8 @@ att.AdditionalSights = {
         ThermalHighlightColor = Color(255, 255, 0),
 		ThermalNoCC = true,
         ThermalFullColor = true,
+        FPSLock = 300,
+        HolosightBlackbox = false
     }
 }
 
