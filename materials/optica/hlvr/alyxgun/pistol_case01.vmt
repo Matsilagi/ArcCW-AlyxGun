@@ -4,9 +4,9 @@ VertexlitGeneric
 	
 	"$phong" 1
 	"$phongwarptexture"			"optica/HLVR/alyxgun/phongwarp_metallic" 
-	"$phongboost"               "0.5"
+	"$phongboost"               "0."
 	"$phongfresnelranges"       "[1 4 8]"
-	"$phongexponent"            "25"
+	"$phongexponent"            "15"
 
 	"$color2"					"[1 1 1]"
 	"$blendTintByBaseAlpha"		"1" 
@@ -18,7 +18,7 @@ VertexlitGeneric
 	
 	"$envmap" "env_cubemap"
 	"$normalmapalphaenvmapmask" "1"
-	"$envmaptint"               "[ 0.1 0.1 0.1 ]"
+	"$envmaptint"               "[ 0.02 0.02 0.02 ]"
 				
 	"$bumpmap"                  "optica/HLVR/alyxgun/pistol_case_n"
 }
