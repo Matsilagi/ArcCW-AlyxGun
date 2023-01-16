@@ -1,25 +1,26 @@
-VertexlitGeneric
+"VertexLitGeneric"
 {
-	"$basetexture" 	"optica/HLVR/alyxgun/AlyxGun_Base_skin01"
-	
-	"$phong" 1
+	"$basetexture"              "optica/HLVR/alyxgun/AlyxGun_Base_skin01"
+	"$bumpmap"                  "optica/HLVR/alyxgun/AlyxGun_Base_n"
 	"$phongexponenttexture"     "optica/HLVR/alyxgun/AlyxGun_Base_r"
 	"$phongwarptexture"			"optica/HLVR/alyxgun/phongwarp_metal" 
-	"$phongboost"               "3"
-	"$phongfresnelranges"       "[0.3 1 4]"
-	"$phongexponent"            "23"
-
-	"$color2"					"[0.5 0.5 0.5]"
-	"$blendTintByBaseAlpha"		"1" 
-
-	"$rimlight"					"1"
-	"$rimmask"					"1"
-	"$rimlightboost"			"0.3"
-	"$rimlightexponent"			"5"
 	
-	"$envmap" "env_cubemap"
+	"$color2"                   "[0.5 0.5 0.5]"
+
+	"$blendTintByBaseAlpha"		"1"
+
+	"$phong"					"1"
+	"$phongboost"				"2"
+	"$phongexponent"			"10"
+	"$phongfresnelranges"		"[0.44 0.80 2]"
+	"$phongalbedotint" 			"1"
+	
+	"$envmap"                   "env_cubemap"
+    "$envmaptint"			    "[0.03 0.03 0.03]"
 	"$normalmapalphaenvmapmask" "1"
-	"$envmaptint"               "[ 0.005 0.005 0.005 ]"
-				
-	"$bumpmap"                  "optica/HLVR/alyxgun/AlyxGun_Base_n"
+	
+	"$rimlight"					"1"
+	"$rimlightexponent"			"33"
+	"$rimlightboost"			"1"
+	"$rimmask"					"1"
 }

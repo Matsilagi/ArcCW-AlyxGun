@@ -57,6 +57,11 @@ $bodygroup "reservoir"
 	studio "ammo_1.smd"
 	blank
 }
+$bodygroup "hopper"
+{
+	studio "vr_alyxgun_AlyxGun_grip_counter.smd"
+	studio "vr_alyxgun_AlyxGun_grip_classic.smd"
+}
 
 
 $cdmaterials "models\weapons\arccw\shared"

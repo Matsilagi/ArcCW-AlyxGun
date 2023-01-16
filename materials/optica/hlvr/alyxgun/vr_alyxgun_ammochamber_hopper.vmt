@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{    
+    "$basetexture" 	"optica/HLVR/alyxgun/AlyxGun_AmmoChamber_selfillum"
+    "$selfillum" "1"
+}
