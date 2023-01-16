@@ -62,6 +62,11 @@ $bodygroup "hopper"
 	studio "vr_alyxgun_AlyxGun_grip_counter.smd"
 	studio "vr_alyxgun_AlyxGun_grip_classic.smd"
 }
+$bodygroup "muzzle"
+{
+	studio "vr_alyxgun_AlyxGun_muzzle.smd"
+	blank
+}
 
 
 $cdmaterials "models\weapons\arccw\shared"
